@@ -140,7 +140,7 @@ Then open your browser and go to:
 2.Screenshot2
    https://github.com/SarayuSuresh18/useless-figma/blob/main/Screenshot%20(146).png
   
-4.Screenshot3
+3.Screenshot3
    https://github.com/SarayuSuresh18/useless-figma/blob/main/Screenshot%20(147).png
    
 
