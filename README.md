@@ -134,17 +134,17 @@ Then open your browser and go to:
 
 *Add your live screenshots below:*
 
-1. **Useless Figma Editor & Tilted Canvas**
-   - *Figma dark-mode shell with tilted frames, ugly colors, and Malayalam sticky note critiques.*
+1.Screenshot1
+   https://github.com/SarayuSuresh18/useless-figma/blob/main/Screenshot%20(145).png 
 
-2. **Layer Therapy & Sentient Layers**
-   - *Dialogue modal where an offended rectangle refuses to be edited until praised.*
+2.Screenshot2
+   https://github.com/SarayuSuresh18/useless-figma/blob/main/Screenshot%20(146).png
+  
+4.Screenshot3
+   https://github.com/SarayuSuresh18/useless-figma/blob/main/Screenshot%20(147).png
+   
 
-3. **Cursed Export & Paper Airplane Blueprint**
-   - *Telegraph Morse code with audio player and printable paper airplane template.*
 
-4. **Official Certificate of Bad Design**
-   - *Printable certificate awarded for creating confusing, inaccessible layouts.*
 
 ---
 
