@@ -1,1 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Figma - Untitled (Lost)</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 57'><path fill='%23F24E1E' d='M19 0H9.5a9.5 9.5 0 0 0 0 19H19z'/><path fill='%230ACF83' d='M0 47.5A9.5 9.5 0 0 0 9.5 57H19V38H9.5A9.5 9.5 0 0 0 0 47.5z'/><path fill='%23FF7262' d='M19 19H9.5a9.5 9.5 0 0 0 0 19H19z'/><path fill='%231ABCFE' d='M19 19h9.5a9.5 9.5 0 0 0 0-19H19z'/><path fill='%23A259FF' d='M38 28.5a9.5 9.5 0 0 0-9.5-9.5H19v19h9.5a9.5 9.5 0 0 0 9.5-9.5z'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="figma-dark">
+  <!-- APP SHELL -->
+  <div class="app-container">
+    
+    <!-- TOP NAVIGATION BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <!-- Figma Logo Menu Button -->
+        <div class="dropdown" id="figma-menu-dropdown">
+          <button class="icon-btn figma-logo-btn" id="menu-toggle-btn" title="Main Menu">
+            <svg width="18" height="27" viewBox="0 0 38 57" fill="none">
+              <path d="M19 0H9.5C4.25329 0 0 4.25329 0 9.5C0 14.7467 4.25329 19 9.5 19H19V0Z" fill="#F24E1E"/>
+              <path d="M0 47.5C0 52.7467 4.25329 57 9.5 57C14.7467 57 19 52.7467 19 47.5V38H9.5C4.25329 38 0 42.2533 0 47.5Z" fill="#0ACF83"/>
+              <path d="M19 19H9.5C4.25329 19 0 23.2533 0 28.5C0 33.7467 4.25329 38 9.5 38H19V19Z" fill="#FF7262"/>
+              <path d="M19 19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19V19Z" fill="#1ABCFE"/>
+              <path d="M38 28.5C38 23.2533 33.7467 19 28.5 19H19V38H28.5C33.7467 38 38 33.7467 38 28.5Z" fill="#A259FF"/>
+            </svg>
+          </button>
+          <div class="dropdown-menu" id="figma-menu">
+            <div class="menu-item" id="menu-dont-save"><span>File</span> <span class="hotkey">Don't Save</span></div>
+            <div class="menu-item" id="menu-regret"><span>Edit</span> <span class="hotkey">Undo & Regret</span></div>
+            <div class="menu-item" id="menu-why"><span>View</span> <span class="hotkey">Why Are You Here?</span></div>
+            <div class="menu-divider"></div>
+            <div class="menu-item" id="menu-open-export"><span>Export to Bad Formats...</span> <span class="hotkey">Ctrl + E</span></div>
+            <div class="menu-item" id="menu-revert-ugliest"><span>Go Back to Ugliest Version</span> <span class="hotkey">Ctrl + Alt + U</span></div>
+            <div class="menu-item" id="menu-productivity"><span>Take a Break (Lock Screen)</span> <span class="hotkey">Ctrl + P</span></div>
+            <div class="menu-divider"></div>
+            <div class="menu-item" id="menu-certificate"><span>View Bad Designer Award</span> <span class="badge-tag">Award</span></div>
+          </div>
+        </div>
 
+        <!-- Breadcrumbs & File Name -->
+        <div class="file-info">
+          <span class="breadcrumb-item">Drafts</span>
+          <span class="breadcrumb-separator">/</span>
+          <span class="file-name" contenteditable="true" id="document-title" spellcheck="false">Untitled (Lost)</span>
+          <span class="file-status-badge" id="cloud-status">Not saved</span>
+        </div>
+      </div>
+
+      <!-- CENTER TOOLBAR -->
+      <div class="topbar-center">
+        <div class="toolbar-group">
+          <!-- Move / Hand -->
+          <button class="tool-btn active" data-tool="select" id="tool-select" title="Move (V)">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M3 1v13l3.5-3.5h4.5L3 1z"/>
+            </svg>
+          </button>
+          <button class="tool-btn" data-tool="hand" id="tool-hand" title="Hand Tool (H)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v3M14 9V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v6M10 10V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8a6 6 0 0 0 6 6h2a6 6 0 0 0 6-6v-5a2 2 0 0 0-2-2 2 2 0 0 0-2 2"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="toolbar-divider"></div>
+
+        <div class="toolbar-group">
+          <!-- Frame -->
+          <button class="tool-btn" data-tool="frame" id="tool-frame" title="Frame (F)">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M4 1v2H1v1h3v8H1v1h3v2h1v-2h6v2h1v-2h3v-1h-3V4h3V3h-3V1h-1v2H5V1H4zm1 3h6v8H5V4z"/>
+            </svg>
+          </button>
+          <!-- Rectangle -->
+          <button class="tool-btn" data-tool="rectangle" id="tool-rect" title="Rectangle (R) - Always Tilted">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="3" width="12" height="10" rx="1"/>
+            </svg>
+          </button>
+          <!-- Ellipse -->
+          <button class="tool-btn" data-tool="ellipse" id="tool-ellipse" title="Circle (O) - Crooked Circle">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+              <ellipse cx="8" cy="8" rx="6" ry="5"/>
+            </svg>
+          </button>
+          <!-- Text -->
+          <button class="tool-btn" data-tool="text" id="tool-text" title="Text (T)">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M2 3h12v2.5h-4.75V13h-2.5V5.5H2V3z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="toolbar-divider"></div>
+
+        <div class="toolbar-group">
+          <!-- Malayalam Sticky Note -->
+          <button class="tool-btn highlight-tool" data-tool="malayalam" id="tool-malayalam" title="Add Malayalam Comment (C)">
+            <span class="tool-emoji">📝</span>
+            <span class="tool-badge-text">Add Note</span>
+          </button>
+
+          <!-- AI Aggressive Improver -->
+          <div class="dropdown" id="ai-dropdown-wrapper">
+            <button class="tool-btn ai-btn" id="tool-ai" title="AI 'Help' (Makes design worse)">
+              <span class="ai-sparkle">✨</span>
+              <span class="tool-btn-label">AI 'Help'</span>
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 5 5-5z"/></svg>
+            </button>
+            <div class="dropdown-menu ai-menu" id="ai-menu">
+              <div class="menu-header">AI THAT MAKES THINGS WORSE</div>
+              <div class="menu-item" id="ai-enterprise">
+                <span class="item-icon">🏢</span>
+                <div class="item-details">
+                  <span class="item-title">Make it Corporate</span>
+                  <span class="item-desc">Big boring grey tables with business charts</span>
+                </div>
+              </div>
+              <div class="menu-item" id="ai-crypto">
+                <span class="item-icon">🚀</span>
+                <div class="item-details">
+                  <span class="item-title">Crypto Mode</span>
+                  <span class="item-desc">Fake NFT badge and huge gas fee button</span>
+                </div>
+              </div>
+              <div class="menu-item" id="ai-agile">
+                <span class="item-icon">🔥</span>
+                <div class="item-details">
+                  <span class="item-title">Work Mode</span>
+                  <span class="item-desc">Put red BLOCKED tags on everything</span>
+                </div>
+              </div>
+              <div class="menu-item" id="ai-pop">
+                <span class="item-icon">💥</span>
+                <div class="item-details">
+                  <span class="item-title">Make it POP</span>
+                  <span class="item-desc">Comic Sans font and painful bright shadows</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gravity Mode -->
+          <button class="tool-btn gravity-btn" id="tool-gravity" title="Gravity Mode (Everything falls down!)">
+            <span class="gravity-icon">🪐</span>
+            <span class="gravity-label">Gravity: OFF</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT CONTROLS (Multiplayer, Share, Zoom) -->
+      <div class="topbar-right">
+        <!-- Live Chaos Score Pill -->
+        <div class="chaos-score-pill" id="chaos-score-badge" title="Bad Designer Points">
+          <span class="flame-icon">🔥</span>
+          <span class="score-number" id="chaos-points">650</span>
+          <span class="score-tier" id="chaos-tier">Level 2: Mess Maker</span>
+        </div>
+
+        <!-- Share Button -->
+        <button class="action-btn share-btn" id="share-btn">Share</button>
+
+        <!-- Present Button -->
+        <button class="action-btn present-btn" id="present-btn" title="Present (Fullscreen)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+
+        <!-- Zoom Dropdown (Only zooms out!) -->
+        <div class="dropdown zoom-dropdown">
+          <button class="zoom-btn" id="zoom-toggle-btn" title="Zoom Tool (Only zooms out)">
+            <span id="zoom-level-text">100%</span>
+            <svg width="8" height="5" viewBox="0 0 8 5" fill="currentColor"><path d="M0 0l4 4 4-4z"/></svg>
+          </button>
+          <div class="dropdown-menu zoom-menu" id="zoom-menu">
+            <div class="menu-item" id="zoom-in-trick"><span>Zoom In (+)</span> <span class="hotkey">Zooms out</span></div>
+            <div class="menu-item" id="zoom-out-action"><span>Zoom Out (-)</span> <span class="hotkey">Zooms out faster</span></div>
+            <div class="menu-item" id="zoom-void-action"><span>Zoom Way Out</span> <span class="hotkey">Tiny Dot</span></div>
+            <div class="menu-item" id="zoom-reset-fail"><span>Reset to 100%</span> <span class="hotkey">Doesn't work</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN WORKSPACE -->
+    <div class="workspace-body">
+      
+      <!-- LEFT SIDEBAR -->
+      <aside class="sidebar-left" id="sidebar-left">
+        <!-- Sidebar Tabs -->
+        <div class="sidebar-tabs">
+          <button class="tab-btn active" data-tab="layers">Layers</button>
+          <button class="tab-btn" data-tab="assets">Bad Assets</button>
+          <button class="tab-btn" data-tab="pages">Pages</button>
+        </div>
+
+        <!-- Layers Panel -->
+        <div class="tab-content active" id="tab-layers">
+          <div class="panel-section-header">
+            <span>LAYERS (WITH FEELINGS)</span>
+            <span class="layer-mood-hint">💡 Layers have feelings</span>
+          </div>
+          <div class="layer-tree" id="layer-tree">
+            <!-- Dynamically populated layers with mood pills -->
+          </div>
+        </div>
+
+        <!-- Assets Panel (Cursed Design System) -->
+        <div class="tab-content" id="tab-assets">
+          <div class="panel-section-header">
+            <span>BAD UI KIT</span>
+          </div>
+          <div class="assets-list">
+            <div class="asset-card" id="asset-unclickable-btn" draggable="true" title="Button that runs away from mouse">
+              <div class="asset-preview">
+                <button class="mock-btn mock-unclickable">Don't Click</button>
+              </div>
+              <div class="asset-meta">
+                <span class="asset-title">Unclickable Button</span>
+                <span class="asset-tag">Hard to click</span>
+              </div>
+            </div>
+
+            <div class="asset-card" id="asset-dark-pattern" draggable="true" title="Subscriptions checked by default with invisible close button">
+              <div class="asset-preview">
+                <div class="mock-modal-preview">
+                  <span class="mock-modal-title">Upgrade to Ultra Pro</span>
+                  <span class="mock-checkbox">☑ Annual $9,999</span>
+                </div>
+              </div>
+              <div class="asset-meta">
+                <span class="asset-title">Sneaky Popup</span>
+                <span class="asset-tag">Hard to close</span>
+              </div>
+            </div>
+
+            <div class="asset-card" id="asset-cognitive-form" draggable="true" title="Form with upside-down labels and strange symbols">
+              <div class="asset-preview">
+                <div class="mock-input-preview">
+                  <span class="mock-label-inverted">Password (Reverse)</span>
+                  <div class="mock-input-box">𓀀𓀁𓀂</div>
+                </div>
+              </div>
+              <div class="asset-meta">
+                <span class="asset-title">Confusing Form</span>
+                <span class="asset-tag">Very confusing</span>
+              </div>
+            </div>
+
+            <div class="asset-card" id="asset-unreadable-card" draggable="true" title="Yellow text on white background with lots of spacing">
+              <div class="asset-preview">
+                <div class="mock-yellow-card">U N R E A D A B L E</div>
+              </div>
+              <div class="asset-meta">
+                <span class="asset-title">Hard to Read Card</span>
+                <span class="asset-tag">Cannot read</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pages Panel -->
+        <div class="tab-content" id="tab-pages">
+          <div class="panel-section-header">
+            <span>PAGES</span>
+          </div>
+          <div class="pages-list">
+            <div class="page-item active" data-page="1">
+              <span class="page-icon">📄</span>
+              <span class="page-name">Page 1 (Mess)</span>
+            </div>
+            <div class="page-item" data-page="trash">
+              <span class="page-icon">🗑️</span>
+              <span class="page-name">Trash Can</span>
+            </div>
+            <div class="page-item" data-page="dread">
+              <span class="page-icon">💀</span>
+              <span class="page-name">Bad Ideas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Version History Footer Widget -->
+        <div class="sidebar-footer-widget" id="version-history-widget">
+          <div class="version-header">
+            <span>Version History</span>
+            <button class="tiny-btn" id="btn-revert-random" title="Go back to ugliest version">Rollback</button>
+          </div>
+          <div class="version-status" id="version-status-text">
+            v1.8 • Going back to ugly version soon...
+          </div>
+        </div>
+      </aside>
+
+      <!-- CANVAS WORKSPACE -->
+      <main class="canvas-viewport" id="canvas-viewport">
+        
+        <!-- Cosmic Void background layer (shown when zoom < 5%) -->
+        <div class="cosmic-void" id="cosmic-void">
+          <div class="stars-bg"></div>
+          <div class="void-banner">
+            <div class="void-planet">🪐</div>
+            <h3>YOU ZOOMED OUT TOO FAR</h3>
+            <p>Your design is now a tiny dot lost in space. You cannot see it anymore.</p>
+            <button class="void-btn" id="void-return-btn">Try to Zoom In</button>
+          </div>
+        </div>
+
+        <!-- Canvas Container with Pan & Zoom transform -->
+        <div class="canvas-artboard" id="canvas-artboard">
+          
+          <!-- Drawing Surface -->
+          <div class="elements-container" id="elements-container">
+            <!-- Initial Figma frames and items will be dynamically generated -->
+          </div>
+
+          <!-- Selection Bounding Box Overlay -->
+          <div class="selection-box" id="selection-box" style="display: none;">
+            <div class="handle handle-tl"></div>
+            <div class="handle handle-tr"></div>
+            <div class="handle handle-bl"></div>
+            <div class="handle handle-br"></div>
+            <div class="handle handle-rotate" title="Rotate (Will snap to tilted angle anyway)"></div>
+            <div class="selection-label" id="selection-label">Rectangle 1 (Tilted 11.4°)</div>
+          </div>
+
+          <!-- Pop-in Malayalam Passive-Aggressive Notes -->
+          <div class="sticky-notes-layer" id="sticky-notes-layer">
+            <!-- Pop-in notes rendered here -->
+          </div>
+
+        </div>
+
+        <!-- Floating Live Snarky Design Critic Toast -->
+        <div class="design-critic-toast" id="critic-toast">
+          <div class="critic-avatar">🧐</div>
+          <div class="critic-content">
+            <div class="critic-author">Design Critic</div>
+            <div class="critic-message" id="critic-message">"4px rounded corners? Very 2012."</div>
+          </div>
+          <button class="critic-close" id="critic-close-btn">&times;</button>
+        </div>
+
+        <!-- Floating Bottom Canvas HUD -->
+        <div class="canvas-bottom-bar">
+          <div class="hud-item">
+            <span class="hud-dot active"></span>
+            <span>Auto-Layout: Shuffles frames every 30s</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-timer-icon">⏳</span>
+            <span id="autolayout-countdown">Next Shuffle: 28s</span>
+          </div>
+          <button class="hud-btn" id="btn-force-scramble" title="Shuffle frames now">Shuffle Now</button>
+          <button class="hud-btn" id="btn-add-malayalam" title="Drop Malayalam sticky note">Add Note</button>
+          <button class="hud-btn" id="btn-test-productivity" title="Test Break Screen">Take a Break</button>
+        </div>
+
+      </main>
+
+      <!-- RIGHT SIDEBAR (INSPECTOR) -->
+      <aside class="sidebar-right" id="sidebar-right">
+        
+        <!-- Inspector Tabs -->
+        <div class="inspector-tabs">
+          <button class="tab-btn active" data-tab="design">Design</button>
+          <button class="tab-btn" data-tab="prototype">Prototype</button>
+          <button class="tab-btn" data-tab="inspect">Inspect</button>
+        </div>
+
+        <!-- Design Inspector Content -->
+        <div class="inspector-content" id="inspector-design">
+          
+          <!-- Transform Section -->
+          <div class="inspector-section">
+            <div class="section-title">TRANSFORM</div>
+            <div class="grid-2x2">
+              <div class="input-field">
+                <span class="input-prefix">X</span>
+                <input type="number" id="prop-x" value="120">
+              </div>
+              <div class="input-field">
+                <span class="input-prefix">Y</span>
+                <input type="number" id="prop-y" value="80">
+              </div>
+              <div class="input-field">
+                <span class="input-prefix">W</span>
+                <input type="number" id="prop-w" value="280">
+              </div>
+              <div class="input-field">
+                <span class="input-prefix">H</span>
+                <input type="number" id="prop-h" value="160">
+              </div>
+            </div>
+
+            <!-- Forced Tilt Angle Section -->
+            <div class="input-field tilt-field">
+              <span class="input-prefix">∠</span>
+              <input type="text" id="prop-angle" value="9.4°" readonly title="Tilt is mandatory. Clean straight angles are not allowed.">
+              <span class="input-suffix">Always Tilted</span>
+            </div>
+          </div>
+
+          <!-- Auto-Layout Chaos Section -->
+          <div class="inspector-section auto-layout-section">
+            <div class="section-header-flex">
+              <span class="section-title">AUTO-LAYOUT</span>
+              <span class="status-indicator live">SHUFFLE ACTIVE</span>
+            </div>
+            <p class="section-subtext">Frames automatically shuffle every 30 seconds to keep things messy.</p>
+            <div class="autolayout-controls">
+              <button class="btn-block" id="btn-inspector-scramble">
+                <span>⚡ Shuffle Frames Now</span>
+              </button>
+              <div class="autolayout-meter">
+                <div class="meter-bar" id="autolayout-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clashing Color Picker Section -->
+          <div class="inspector-section">
+            <div class="section-header-flex">
+              <span class="section-title">FILL (UGLY COLORS ONLY)</span>
+              <span class="palette-warning" title="Nice colors are turned off">⚠️ Bad colors only</span>
+            </div>
+            <div class="fill-row">
+              <div class="color-swatch" id="active-color-swatch" style="background-color: #00FF66;"></div>
+              <input type="text" id="color-hex-display" value="#00FF66" readonly>
+              <span class="color-name-tag" id="color-name-tag">Ugly Green</span>
+            </div>
+
+            <div class="clashing-palette-container">
+              <span class="mini-label">UGLY COLOR PALETTE:</span>
+              <div class="clashing-swatches" id="clashing-swatches">
+                <!-- Dynamically populated clashing colors -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Stroke & Effects Section -->
+          <div class="inspector-section">
+            <div class="section-title">EFFECTS</div>
+            <div class="effect-item">
+              <span class="effect-icon">👁️</span>
+              <span class="effect-label">Huge blurry shadow (500px blur)</span>
+              <input type="checkbox" checked id="effect-shadow-toggle">
+            </div>
+            <div class="effect-item">
+              <span class="effect-icon">🔀</span>
+              <span class="effect-label">3D Wobble</span>
+              <input type="checkbox" checked id="effect-wobble-toggle">
+            </div>
+          </div>
+
+          <!-- Certified Anti-Designer Status Box -->
+          <div class="inspector-section badge-card-section">
+            <div class="badge-card">
+              <div class="badge-card-top">
+                <span class="badge-icon">🎖️</span>
+                <div>
+                  <div class="badge-card-title">Figma Bad Designer</div>
+                  <div class="badge-card-sub" id="inspector-badge-level">Rank: Level 2 Mess Maker</div>
+                </div>
+              </div>
+              <div class="badge-progress-wrap">
+                <div class="badge-progress-bar" style="width: 45%;"></div>
+              </div>
+              <button class="btn-certificate" id="btn-view-certificate">View Certificate</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Prototype Tab -->
+        <div class="inspector-content" id="inspector-prototype" style="display: none;">
+          <div class="empty-state-panel">
+            <span class="empty-icon">🪢</span>
+            <h4>Prototype Interactions</h4>
+            <p>Every click leads to an endless loading spinner.</p>
+            <button class="btn-block" id="btn-prototype-wire">Add Infinite Loop</button>
+          </div>
+        </div>
+
+        <!-- Inspect Tab (CSS) -->
+        <div class="inspector-content" id="inspector-inspect" style="display: none;">
+          <div class="inspect-code-panel">
+            <span class="code-title">CSS (Messy Code)</span>
+            <pre class="code-box"><code>.element {
+  position: absolute !important;
+  z-index: 99999999 !important;
+  transform: rotate(11.37deg) skew(4deg);
+  background: #00FF66 !important;
+  color: #FFFF00 !important;
+  font-family: "Comic Sans MS", cursive;
+  filter: drop-shadow(500px 500px 0 #FF00FF);
+}</code></pre>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- ==================== MODALS & OVERLAYS ==================== -->
+
+  <!-- 1. LAYER THERAPY DIALOG (Sentient Layers) -->
+  <div class="modal-backdrop" id="modal-layer-therapy" style="display: none;">
+    <div class="therapy-card">
+      <div class="therapy-header">
+        <span class="therapy-emoji" id="therapy-layer-emoji">💔</span>
+        <div>
+          <h3 id="therapy-layer-name">Rectangle 3 Is Upset</h3>
+          <p class="therapy-subtitle">This layer will not let you select it because it feels ignored.</p>
+        </div>
+      </div>
+      <div class="therapy-body">
+        <div class="dialogue-box" id="therapy-quote">
+          "You ignored me for 10 minutes. Do you like the circle better than me?"
+        </div>
+        
+        <div class="therapy-options-title">Say something nice so you can edit it:</div>
+        <div class="therapy-options">
+          <button class="therapy-option-btn" data-praise="straight">"You are the best rectangle here."</button>
+          <button class="therapy-option-btn" data-praise="color">"Your color is very pretty."</button>
+          <button class="therapy-option-btn" data-praise="delete">"I promise I will not delete you."</button>
+        </div>
+
+        <div class="therapy-custom-input">
+          <input type="text" id="therapy-custom-text" placeholder="Or type a nice message to this layer...">
+          <button id="therapy-submit-custom">Send</button>
+        </div>
+      </div>
+      <div class="therapy-footer">
+        <span class="layer-mood-status" id="therapy-mood-status">Mood: Very Mad 😠</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. PRODUCTIVITY MODE LOCKOUT OVERLAY (Elevator Music + Canvas Lock) -->
+  <div class="productivity-lockout" id="productivity-overlay" style="display: none;">
+    <div class="lockout-card">
+      <div class="lockout-disc">
+        <div class="vinyl-record spinning">🎵</div>
+      </div>
+      <h2>TIME FOR A BREAK!</h2>
+      <p class="lockout-subtitle">
+        The screen is locked so you can rest. Relax and listen to some simple elevator music.
+      </p>
+      
+      <div class="now-playing-box">
+        <span class="audio-equalizer">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </span>
+        <span>Now Playing: <em>Calm Elevator Music</em></span>
+      </div>
+
+      <div class="lockout-timer" id="productivity-timer-display">
+        Time remaining: <strong id="productivity-seconds">60s</strong>
+      </div>
+
+      <p class="mindfulness-quote" id="mindfulness-quote">
+        "If you cannot edit, you cannot make mistakes."
+      </p>
+
+      <div class="lockout-actions">
+        <button class="btn-muzak-toggle" id="btn-toggle-muzak">Mute Music</button>
+        <button class="btn-dismiss-lock" id="btn-bypass-productivity">Let Me Back In</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. BAD EXPORT MODAL -->
+  <div class="modal-backdrop" id="modal-cursed-export" style="display: none;">
+    <div class="export-card">
+      <div class="export-header">
+        <div class="export-title-group">
+          <span class="export-icon">💾</span>
+          <div>
+            <h3>Bad Export Formats</h3>
+            <p>Normal formats (PNG, SVG, PDF) are not allowed here.</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="close-export-modal">&times;</button>
+      </div>
+
+      <div class="export-tabs">
+        <button class="export-tab-btn active" data-export="morse">📡 Morse Code (Beeps)</button>
+        <button class="export-tab-btn" data-export="ascii">📟 Text Picture (ASCII)</button>
+        <button class="export-tab-btn" data-export="airplane">✈️ Paper Airplane</button>
+      </div>
+
+      <div class="export-body">
+        
+        <!-- Tab 1: Morse Code -->
+        <div class="export-content active" id="export-tab-morse">
+          <p class="export-help">Your design turned into Morse code dots and dashes. You can listen to real beeps!</p>
+          <div class="morse-player-bar">
+            <button class="play-morse-btn" id="btn-play-morse">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <span>Play Audio Beeps</span>
+            </button>
+            <button class="action-btn-secondary" id="btn-copy-morse">Copy Morse Code</button>
+          </div>
+          <pre class="morse-code-box" id="morse-output">Generating beeps...</pre>
+        </div>
+
+        <!-- Tab 2: ASCII Art -->
+        <div class="export-content" id="export-tab-ascii">
+          <p class="export-help">Your design drawn purely with text characters.</p>
+          <div class="morse-player-bar">
+            <button class="action-btn-secondary" id="btn-download-ascii">Download .txt File</button>
+            <button class="action-btn-secondary" id="btn-copy-ascii">Copy to Clipboard</button>
+          </div>
+          <pre class="ascii-art-box" id="ascii-output">Loading text diagram...</pre>
+        </div>
+
+        <!-- Tab 3: Paper Airplane Template -->
+        <div class="export-content" id="export-tab-airplane">
+          <p class="export-help">Print this fold guide, make a paper airplane, and throw it at your boss.</p>
+          <div class="airplane-preview-wrap">
+            <svg id="airplane-svg" width="400" height="280" viewBox="0 0 400 280">
+              <!-- Blueprint SVG drawn here -->
+            </svg>
+          </div>
+          <div class="airplane-controls">
+            <button class="action-btn-secondary" id="btn-print-airplane">Print Fold Template</button>
+            <span class="fold-tip">💡 Fold along the dotted lines</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. OFFICIAL CERTIFICATE MODAL -->
+  <div class="modal-backdrop" id="modal-certificate" style="display: none;">
+    <div class="certificate-modal-card">
+      <button class="modal-close-btn cert-close" id="close-cert-modal">&times;</button>
+      
+      <!-- Printable Certificate Frame -->
+      <div class="certificate-frame" id="printable-certificate">
+        <div class="cert-border">
+          <div class="cert-inner-border">
+            <div class="cert-header">
+              <div class="cert-logo">⚡ FIGMA BAD DESIGNER AWARD ⚡</div>
+              <h1>CERTIFICATE OF BAD DESIGN</h1>
+              <div class="cert-subtitle">Awarded for Making Very Confusing Designs</div>
+            </div>
+
+            <div class="cert-recipient-block">
+              <p>This certifies that</p>
+              <div class="cert-name" contenteditable="true" id="cert-student-name">CHIEF MESS MAKER</div>
+              <p>has shown great skill at making designs that are tilted, confusing, hard to read, and full of ugly colors that hurt people's eyes.</p>
+            </div>
+
+            <div class="cert-stats-grid">
+              <div class="cert-stat">
+                <span class="stat-number" id="cert-chaos-score">650 PTS</span>
+                <span class="stat-title">Mess Points</span>
+              </div>
+              <div class="cert-stat">
+                <span class="stat-number" id="cert-tilt-score">100%</span>
+                <span class="stat-title">Always Tilted</span>
+              </div>
+              <div class="cert-stat">
+                <span class="stat-number" id="cert-wcag-score">Grade: F</span>
+                <span class="stat-title">Readability</span>
+              </div>
+            </div>
+
+            <div class="cert-signatures">
+              <div class="cert-sig-box">
+                <div class="sig-line">Dylan Field (In Disbelief)</div>
+                <div class="sig-role">Co-Founder of Figma</div>
+              </div>
+              <div class="cert-seal">
+                <div class="gold-seal">
+                  ★ VERY BAD DESIGN ★
+                </div>
+              </div>
+              <div class="cert-sig-box">
+                <div class="sig-line">Malayalam Sticky Note</div>
+                <div class="sig-role">Lead Critic</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-modal-actions">
+        <button class="action-btn-secondary" id="btn-print-cert">Print Certificate</button>
+        <button class="share-btn" id="btn-brag-cert">Share on LinkedIn</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio elements & Scripts -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
